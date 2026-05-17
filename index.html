@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoongyu & Juyeon Wedding Invitation</title>
+    <meta name="description" content="Yoongyu and Juyeon wedding invitation" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="invitation">
+      <button class="music-button" type="button" aria-label="음악 재생 또는 일시정지">
+        <span class="music-icon" aria-hidden="true">♪</span>
+      </button>
+      <audio id="weddingMusic" src="music.mp3" preload="none" loop></audio>
+
+      <section class="hero" aria-label="청첩장 대표 이미지">
+        <img src="images/optimized/top.jpg" alt="신랑 신부 대표 사진" class="hero-image" />
+        <div class="hero-overlay">
+          <p class="hero-name">Yoongyu</p>
+          <p class="hero-amp">&amp;</p>
+          <p class="hero-name">Juyeon</p>
+        </div>
+      </section>
+
+      <section class="section story-section">
+        <p class="script-title">our story</p>
+        <h1 class="names-ko">윤규 그리고 주연</h1>
+        <div class="story-copy">
+          <p>
+            서로가 마주보며 다져온 사랑을<br />
+            이제 함께 한 곳을 바라보며<br />
+            걸어갈 수 있는 큰 사랑으로 키우고자 합니다.
+          </p>
+          <p>
+            저희 두 사람이 사랑의 이름으로<br />
+            지켜나갈 수 있게 앞날을<br />
+            축복해 주시면 감사하겠습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="section gallery-section">
+        <p class="eyebrow">GALLERY</p>
+        <h2>우리의 순간</h2>
+        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="section account-section">
+        <p class="eyebrow">ACCOUNT</p>
+        <h2>신랑 &amp; 신부에게 마음 전하기</h2>
+        <div class="account-list">
+          <article class="account-card">
+            <button class="account-toggle" type="button" aria-expanded="false">
+              <span>신랑 측</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="account-panel">
+              <!-- 실제 계좌 정보는 아래 임시값을 수정하세요. -->
+              <dl>
+                <div>
+                  <dt>예금주</dt>
+                  <dd>홍윤규</dd>
+                </div>
+                <div>
+                  <dt>은행명</dt>
+                  <dd>국민은행</dd>
+                </div>
+                <div>
+                  <dt>계좌번호</dt>
+                  <dd class="account-number">000000-00-000000</dd>
+                </div>
+              </dl>
+              <button class="copy-button" type="button" data-account="000000-00-000000" aria-label="신랑 측 계좌번호 복사하기">
+                복사하기
+              </button>
+            </div>
+          </article>
+
+          <article class="account-card">
+            <button class="account-toggle" type="button" aria-expanded="false">
+              <span>신부 측</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="account-panel">
+              <!-- 실제 계좌 정보는 아래 임시값을 수정하세요. -->
+              <dl>
+                <div>
+                  <dt>예금주</dt>
+                  <dd>최주연</dd>
+                </div>
+                <div>
+                  <dt>은행명</dt>
+                  <dd>신한은행</dd>
+                </div>
+                <div>
+                  <dt>계좌번호</dt>
+                  <dd class="account-number">000-000-000000</dd>
+                </div>
+              </dl>
+              <button class="copy-button" type="button" data-account="000-000-000000" aria-label="신부 측 계좌번호 복사하기">
+                복사하기
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section guestbook-section">
+        <p class="eyebrow">GUEST BOOK</p>
+        <h2>방명록</h2>
+        <form class="guestbook-form" id="guestbookForm">
+          <label>
+            <span>이름</span>
+            <input type="text" id="guestName" autocomplete="name" />
+          </label>
+          <label>
+            <span>비밀번호</span>
+            <input type="password" id="guestPassword" autocomplete="new-password" />
+          </label>
+          <label>
+            <span>축하 메시지</span>
+            <textarea id="guestMessage" rows="4"></textarea>
+          </label>
+          <p class="form-error" id="formError" role="alert"></p>
+          <button class="primary-button" type="submit">축하 메시지 남기기</button>
+        </form>
+        <div class="message-list" id="messageList"></div>
+        <button class="more-button" id="moreButton" type="button">더보기</button>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="갤러리 이미지 닫기">×</button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="이전 갤러리 이미지 보기">‹</button>
+      <img src="" alt="확대된 갤러리 사진" id="lightboxImage" />
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="다음 갤러리 이미지 보기">›</button>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">복사되었습니다</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
