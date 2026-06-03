@@ -1,18 +1,15 @@
 :root {
-  --page-bg: #f7f7f2;
-  --card-bg: #fffdf8;
-  --soft-green: #eef6d8;
-  --accent: #7d8b56;
-  --accent-dark: #5f6f3e;
-  --coral: #ef875d;
-  --cream: #fff8ea;
-  --deep-brown: #3c352d;
-  --text: #333333;
-  --subtext: #777777;
-  --line: #e6e3d8;
-  --shadow: 0 22px 60px rgba(61, 57, 45, 0.12);
-  --serif: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
-  --kitsch: "Playwrite GB J", "Comic Sans MS", cursive;
+  --page-bg: #ebecee;
+  --card-bg: #f7f2eb;
+  --section-bg: #fbf7f1;
+  --panel-bg: #ffffff;
+  --accent: #8f887a;
+  --accent-dark: #6f675b;
+  --text: #4d4944;
+  --subtext: #878076;
+  --line: #e6ddd3;
+  --shadow: 0 28px 60px rgba(103, 93, 79, 0.08);
+  --display: "Bodoni Moda", "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
@@ -44,9 +41,7 @@ button {
   width: min(100%, 430px);
   min-height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
-  background: var(--card-bg);
-  box-shadow: var(--shadow);
+  background: transparent;
 }
 
 .music-button {
@@ -54,14 +49,14 @@ button {
   top: 18px;
   right: max(18px, calc((100vw - 430px) / 2 + 18px));
   z-index: 20;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.75);
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.82);
   color: var(--accent-dark);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
 }
 
 .music-button.is-playing .music-icon {
@@ -69,216 +64,99 @@ button {
   transform: translateY(-1px);
 }
 
+/* HERO */
 .hero {
-  position: relative;
-  min-height: 760px;
-  padding: 22px 18px 0;
+  padding: 36px 18px 18px;
+}
+
+.hero-card {
+  padding: 34px 24px 42px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.hero-korean-names {
+  margin: 0 0 28px;
+  color: var(--accent-dark);
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-align: center;
+}
+
+.hero-arch-frame {
+  width: min(100%, 300px);
+  margin: 0 auto;
   overflow: hidden;
-  background: transparent;
+  border-radius: 160px 160px 0 0;
+  background: #eceae6;
 }
 
 .hero-image {
   display: block;
   width: 100%;
-  height: 720px;
+  height: 430px;
   object-fit: cover;
-  border-radius: 34px;
-  filter: saturate(0.92) contrast(0.96) brightness(0.96);
 }
 
-.hero::before,
-.hero::after {
-  content: none;
-}
-
-.hero-overlay.hero-diary {
-  position: absolute;
-  inset: 22px 18px 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-title {
-  position: absolute;
-  margin: 0;
-  color: var(--cream);
-  font-family: var(--kitsch);
-  font-weight: 300;
-  line-height: 0.9;
-  letter-spacing: -0.08em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-}
-
-.hero-happy {
-  top: 94px;
-  left: 42px;
-  font-size: clamp(74px, 17vw, 102px);
-}
-
-.hero-wedding {
-  top: 208px;
-  left: 78px;
-  font-size: clamp(52px, 12vw, 72px);
-}
-
-.hero-names {
-  position: absolute;
-  right: 34px;
-  bottom: 92px;
-  text-align: right;
-}
-
-.hero-yoongyu {
-  position: static;
-  font-size: clamp(30px, 7.5vw, 42px);
-  line-height: 1;
-}
-
-.hero-amp {
-  position: static;
-  margin: 4px 8px 2px 0;
-  font-size: clamp(22px, 5vw, 30px);
-  line-height: 1;
-}
-
-.hero-juyeon {
-  position: static;
-  font-size: clamp(36px, 8.5vw, 50px);
-  line-height: 1;
-}
-
-.hero-date-vertical {
-  position: absolute;
-  left: 28px;
-  bottom: 80px;
-  margin: 0;
-  color: var(--cream);
-  font-family: var(--sans);
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-
-.heart-sticker {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
-}
-
-.heart-sticker::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.96);
-  clip-path: polygon(14% 8%, 62% 0, 88% 14%, 100% 56%, 82% 100%, 26% 96%, 0 54%, 4% 18%);
-  border-radius: 4px;
-}
-
-.heart-sticker .material-symbols-outlined {
-  position: relative;
-  z-index: 1;
-  font-size: 28px;
-  color: var(--coral);
-  line-height: 1;
-}
-
-.heart-sm {
-  width: 40px;
-  height: 40px;
-}
-
-.heart-sm .material-symbols-outlined {
-  font-size: 22px;
-}
-
-/* 3개는 메인 타이틀 근처, 2개는 반대쪽 왼쪽에 배치 */
-.heart-1 {
-  top: 82px;
-  left: 220px;
-  transform: rotate(-6deg);
-}
-
-.heart-2 {
-  top: 162px;
-  left: 54px;
-  transform: rotate(-10deg);
-}
-
-.heart-3 {
-  top: 240px;
-  left: 282px;
-  transform: rotate(8deg);
-}
-
-.heart-4 {
-  bottom: 188px;
-  left: 94px;
-  transform: rotate(5deg);
-}
-
-.heart-5 {
-  bottom: 96px;
-  left: 56px;
-  transform: rotate(-8deg);
-}
-
-.section {
-  padding: 74px 30px;
+.hero-english-title {
+  margin: -26px 0 0;
+  color: #9e977f;
+  font-family: var(--display);
+  font-size: 52px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
   text-align: center;
 }
 
-.story-section {
-  background: var(--soft-green);
+/* COMMON SECTIONS */
+.section {
+  margin: 0 18px 18px;
+  padding: 42px 24px;
+  background: var(--section-bg);
+  box-shadow: var(--shadow);
+  text-align: center;
 }
 
-.script-title {
-  margin: 0 0 18px;
+.script-title,
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.names-ko,
+h2 {
+  margin: 0 0 24px;
   color: var(--accent-dark);
-  font-family: var(--serif);
-  font-size: 24px;
-  font-style: italic;
-}
-
-.names-ko {
-  margin: 0 0 36px;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.24;
 }
 
 .story-copy {
-  color: #4e4e45;
+  color: var(--text);
   font-size: 15px;
-  line-height: 2.05;
+  line-height: 2;
 }
 
 .story-copy p {
-  margin: 0 0 28px;
+  margin: 0 0 24px;
 }
 
 .story-copy p:last-child {
   margin-bottom: 0;
 }
 
-.eyebrow {
-  margin: 0 0 8px;
-  color: var(--accent-dark);
-  font-family: var(--serif);
-  font-size: 17px;
-  letter-spacing: 0.16em;
-}
-
-h2 {
-  margin: 0 0 28px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
+/* GALLERY */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -292,7 +170,7 @@ h2 {
   overflow: hidden;
   border: 0;
   border-radius: 8px;
-  background: #ecebe3;
+  background: #ece7df;
 }
 
 .gallery-item img {
@@ -308,10 +186,7 @@ h2 {
   transform: scale(1.04);
 }
 
-.account-section {
-  background: #fbfaf3;
-}
-
+/* ACCOUNT */
 .account-list {
   display: grid;
   gap: 12px;
@@ -319,10 +194,10 @@ h2 {
 }
 
 .account-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
   overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-bg);
 }
 
 .account-toggle {
@@ -333,12 +208,14 @@ h2 {
   padding: 18px 20px;
   border: 0;
   background: transparent;
-  color: var(--text);
+  color: var(--accent-dark);
+  font-family: var(--display);
+  font-size: 18px;
   font-weight: 600;
 }
 
 .account-toggle span:last-child {
-  color: var(--accent-dark);
+  color: var(--accent);
   font-size: 21px;
   line-height: 1;
 }
@@ -364,8 +241,8 @@ dl div {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  padding: 7px 0;
-  border-bottom: 1px solid #f0eee7;
+  padding: 8px 0;
+  border-bottom: 1px solid #f2ece4;
 }
 
 dt {
@@ -375,6 +252,7 @@ dt {
 
 dd {
   margin: 0;
+  color: var(--text);
   font-size: 14px;
   text-align: right;
 }
@@ -388,14 +266,14 @@ dd {
   background: var(--accent);
   color: #fff;
   font-weight: 600;
-  box-shadow: 0 10px 22px rgba(95, 111, 62, 0.16);
 }
 
-.copy-button {
-  padding: 11px 14px;
-  font-size: 14px;
+.copy-button,
+.primary-button {
+  padding: 12px 16px;
 }
 
+/* GUEST BOOK */
 .guestbook-form {
   display: grid;
   gap: 13px;
@@ -412,18 +290,18 @@ dd {
 .guestbook-form input,
 .guestbook-form textarea {
   width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-  color: var(--text);
   padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
   outline: none;
+  background: var(--panel-bg);
+  color: var(--text);
 }
 
 .guestbook-form input:focus,
 .guestbook-form textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(125, 139, 86, 0.15);
+  box-shadow: 0 0 0 3px rgba(143, 136, 122, 0.12);
 }
 
 .form-error {
@@ -431,10 +309,6 @@ dd {
   margin: 0;
   color: #b45644;
   font-size: 13px;
-}
-
-.primary-button {
-  padding: 13px 16px;
 }
 
 .message-list {
@@ -445,10 +319,10 @@ dd {
 }
 
 .message-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
   padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-bg);
 }
 
 .message-meta {
@@ -471,7 +345,7 @@ dd {
 
 .message-text {
   margin: 0;
-  color: #4b4b43;
+  color: var(--text);
   font-size: 14px;
   white-space: pre-wrap;
 }
@@ -480,10 +354,11 @@ dd {
   display: none;
   margin-top: 18px;
   padding: 12px 16px;
-  background: #d8dfbd;
-  color: var(--accent-dark);
+  background: #d4cdc1;
+  color: #fff;
 }
 
+/* LIGHTBOX */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -515,13 +390,13 @@ dd {
   justify-content: center;
   width: 42px;
   height: 42px;
+  padding: 0 0 3px;
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   color: #222;
   font-size: 28px;
   line-height: 1;
-  padding: 0 0 3px;
 }
 
 .lightbox-nav {
@@ -533,13 +408,13 @@ dd {
   justify-content: center;
   width: 46px;
   height: 46px;
+  padding: 0 0 4px;
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   color: #222;
   font-size: 36px;
   line-height: 1;
-  padding: 0 0 4px;
   transform: translateY(-50%);
 }
 
@@ -555,12 +430,12 @@ dd {
   display: none;
 }
 
+/* TOAST */
 .toast {
   position: fixed;
   left: 50%;
   bottom: 24px;
   z-index: 60;
-  transform: translate(-50%, 20px);
   min-width: 160px;
   padding: 12px 16px;
   border-radius: 999px;
@@ -569,6 +444,7 @@ dd {
   text-align: center;
   opacity: 0;
   pointer-events: none;
+  transform: translate(-50%, 20px);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -583,98 +459,39 @@ dd {
   }
 
   .hero {
-    min-height: 710px;
-    padding: 20px 16px 0;
+    padding: 28px 16px 16px;
+  }
+
+  .hero-card {
+    padding: 28px 18px 34px;
+  }
+
+  .hero-korean-names {
+    margin-bottom: 24px;
+    font-size: 18px;
+    letter-spacing: 0.24em;
+  }
+
+  .hero-arch-frame {
+    width: min(100%, 278px);
   }
 
   .hero-image {
-    height: 680px;
-    border-radius: 32px;
+    height: 400px;
   }
 
-  .hero-overlay.hero-diary {
-    inset: 20px 16px 0;
+  .hero-english-title {
+    margin-top: -22px;
+    font-size: 46px;
   }
 
   .section {
-    padding: 66px 24px;
+    margin: 0 16px 16px;
+    padding: 38px 20px;
   }
 
-  .hero-happy {
-    top: 90px;
-    left: 38px;
-    font-size: clamp(68px, 18vw, 94px);
-  }
-
-  .hero-wedding {
-    top: 196px;
-    left: 70px;
-    font-size: clamp(48px, 12.5vw, 68px);
-  }
-
-  .hero-names {
-    right: 30px;
-    bottom: 88px;
-  }
-
-  .hero-yoongyu {
-    font-size: clamp(28px, 7vw, 40px);
-  }
-
-  .hero-amp {
-    font-size: clamp(20px, 4.5vw, 28px);
-  }
-
-  .hero-juyeon {
-    font-size: clamp(34px, 8vw, 46px);
-  }
-
-  .hero-date-vertical {
-    left: 22px;
-    bottom: 86px;
-    font-size: 16px;
-  }
-
-  .heart-sticker {
-    width: 48px;
-    height: 48px;
-  }
-
-  .heart-sticker .material-symbols-outlined {
+  .names-ko,
+  h2 {
     font-size: 24px;
-  }
-
-  .heart-sm {
-    width: 36px;
-    height: 36px;
-  }
-
-  .heart-sm .material-symbols-outlined {
-    font-size: 19px;
-  }
-
-  .heart-1 {
-    top: 84px;
-    left: 208px;
-  }
-
-  .heart-2 {
-    top: 160px;
-    left: 50px;
-  }
-
-  .heart-3 {
-    top: 232px;
-    left: 272px;
-  }
-
-  .heart-4 {
-    bottom: 182px;
-    left: 90px;
-  }
-
-  .heart-5 {
-    bottom: 92px;
-    left: 54px;
   }
 }
