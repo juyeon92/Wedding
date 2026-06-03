@@ -104,12 +104,12 @@ button {
 .hero-english-title {
   position: relative;
   z-index: 1;
-  margin: -8px 0 0;
+  margin: -86px 0 0;
   color: #9e977f;
   font-family: var(--script);
-  font-size: 64px;
+  font-size: 96px;
   font-weight: 400;
-  line-height: 0.72;
+  line-height: 0.88;
   text-align: center;
 }
 
@@ -514,9 +514,9 @@ dd {
   }
 
   .hero-english-title {
-    margin-top: -8px;
-    font-size: 58px;
-    line-height: 0.72;
+    margin-top: -74px;
+    font-size: 78px;
+    line-height: 0.9;
   }
 
   .section {
