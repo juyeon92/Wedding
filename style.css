@@ -69,7 +69,6 @@ button {
   transform: translateY(-1px);
 }
 
-/* HERO - diary kitsch */
 .hero {
   position: relative;
   min-height: 760px;
@@ -96,11 +95,10 @@ button {
   position: absolute;
   inset: 22px 18px 0;
   z-index: 2;
-  color: var(--cream);
   pointer-events: none;
 }
 
-.hero-main-copy {
+.hero-title {
   position: absolute;
   margin: 0;
   color: var(--cream);
@@ -111,37 +109,48 @@ button {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
-.hero-main-top {
-  top: 90px;
-  left: 44px;
-  font-size: clamp(76px, 17vw, 108px);
+.hero-happy {
+  top: 94px;
+  left: 42px;
+  font-size: clamp(74px, 17vw, 102px);
 }
 
-.hero-main-bottom {
-  left: 215px;
-  bottom: 80px;
-  font-size: clamp(62px, 13.5vw, 84px);
-  text-align: left;
+.hero-wedding {
+  top: 208px;
+  left: 78px;
+  font-size: clamp(52px, 12vw, 72px);
 }
 
-.hero-side-copy {
+.hero-names {
   position: absolute;
-  top: 66px;
-  right: 36px;
-  margin: 0;
-  color: var(--cream);
-  font-family: var(--sans);
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.42;
+  right: 34px;
+  bottom: 92px;
   text-align: right;
-  letter-spacing: 0.01em;
+}
+
+.hero-yoongyu {
+  position: static;
+  font-size: clamp(30px, 7.5vw, 42px);
+  line-height: 1;
+}
+
+.hero-amp {
+  position: static;
+  margin: 4px 8px 2px 0;
+  font-size: clamp(22px, 5vw, 30px);
+  line-height: 1;
+}
+
+.hero-juyeon {
+  position: static;
+  font-size: clamp(36px, 8.5vw, 50px);
+  line-height: 1;
 }
 
 .hero-date-vertical {
   position: absolute;
-  left: 26px;
-  bottom: 88px;
+  left: 28px;
+  bottom: 80px;
   margin: 0;
   color: var(--cream);
   font-family: var(--sans);
@@ -158,55 +167,66 @@ button {
   place-items: center;
   width: 54px;
   height: 54px;
-  background: rgba(255, 255, 255, 0.96);
-  color: var(--coral);
-  border-radius: 8px;
-  font-size: 26px;
-  line-height: 1;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
 }
 
 .heart-sticker::before {
   content: "";
   position: absolute;
   inset: 0;
-  clip-path: polygon(12% 16%, 76% 0, 100% 72%, 26% 100%, 0 42%);
   background: rgba(255, 255, 255, 0.96);
-  border-radius: 2px;
-  z-index: -1;
+  clip-path: polygon(14% 8%, 62% 0, 88% 14%, 100% 56%, 82% 100%, 26% 96%, 0 54%, 4% 18%);
+  border-radius: 4px;
 }
 
+.heart-sticker .material-symbols-outlined {
+  position: relative;
+  z-index: 1;
+  font-size: 28px;
+  color: var(--coral);
+  line-height: 1;
+}
+
+.heart-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.heart-sm .material-symbols-outlined {
+  font-size: 22px;
+}
+
+/* 3개는 메인 타이틀 근처, 2개는 반대쪽 왼쪽에 배치 */
 .heart-1 {
-  top: 88px;
-  left: 208px;
-  transform: rotate(-7deg);
+  top: 82px;
+  left: 220px;
+  transform: rotate(-6deg);
 }
 
 .heart-2 {
-  top: 318px;
-  left: 38px;
-  transform: rotate(-8deg);
-}
-
-.heart-3 {
-  top: 346px;
-  right: 58px;
+  top: 162px;
+  left: 54px;
   transform: rotate(-10deg);
 }
 
-.heart-4 {
-  bottom: 176px;
-  left: 108px;
-  transform: rotate(4deg);
-}
-
-.heart-5 {
-  right: 52px;
-  bottom: 66px;
+.heart-3 {
+  top: 240px;
+  left: 282px;
   transform: rotate(8deg);
 }
 
-/* COMMON */
+.heart-4 {
+  bottom: 188px;
+  left: 94px;
+  transform: rotate(5deg);
+}
+
+.heart-5 {
+  bottom: 96px;
+  left: 56px;
+  transform: rotate(-8deg);
+}
+
 .section {
   padding: 74px 30px;
   text-align: center;
@@ -580,58 +600,81 @@ dd {
     padding: 66px 24px;
   }
 
-  .hero-main-top {
-    top: 96px;
-    left: 44px;
-    font-size: clamp(68px, 18vw, 88px);
+  .hero-happy {
+    top: 90px;
+    left: 38px;
+    font-size: clamp(68px, 18vw, 94px);
   }
 
-  .hero-main-bottom {
-    left: 204px;
-    bottom: 90px;
-    font-size: clamp(56px, 14vw, 74px);
+  .hero-wedding {
+    top: 196px;
+    left: 70px;
+    font-size: clamp(48px, 12.5vw, 68px);
   }
 
-  .hero-side-copy {
-    top: 62px;
-    right: 34px;
-    font-size: 17px;
+  .hero-names {
+    right: 30px;
+    bottom: 88px;
+  }
+
+  .hero-yoongyu {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .hero-amp {
+    font-size: clamp(20px, 4.5vw, 28px);
+  }
+
+  .hero-juyeon {
+    font-size: clamp(34px, 8vw, 46px);
   }
 
   .hero-date-vertical {
     left: 22px;
-    bottom: 90px;
+    bottom: 86px;
     font-size: 16px;
   }
 
   .heart-sticker {
     width: 48px;
     height: 48px;
-    font-size: 23px;
+  }
+
+  .heart-sticker .material-symbols-outlined {
+    font-size: 24px;
+  }
+
+  .heart-sm {
+    width: 36px;
+    height: 36px;
+  }
+
+  .heart-sm .material-symbols-outlined {
+    font-size: 19px;
   }
 
   .heart-1 {
-    top: 90px;
-    left: 206px;
+    top: 84px;
+    left: 208px;
   }
 
   .heart-2 {
-    top: 322px;
-    left: 36px;
+    top: 160px;
+    left: 50px;
   }
 
   .heart-3 {
-    top: 348px;
-    right: 52px;
+    top: 232px;
+    left: 272px;
   }
 
   .heart-4 {
     bottom: 182px;
-    left: 110px;
+    left: 90px;
   }
 
   .heart-5 {
-    right: 48px;
-    bottom: 72px;
+    bottom: 92px;
+    left: 54px;
   }
 }
