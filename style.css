@@ -4,7 +4,7 @@
   --soft-green: #eef6d8;
   --accent: #7d8b56;
   --accent-dark: #5f6f3e;
-  --coral: #ff7f66;
+  --coral: #ef875d;
   --cream: #fff8ea;
   --deep-brown: #3c352d;
   --text: #333333;
@@ -58,7 +58,7 @@ button {
   height: 44px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.82);
   color: var(--accent-dark);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(8px);
@@ -69,156 +69,144 @@ button {
   transform: translateY(-1px);
 }
 
-/* HERO - 최종 강제 적용 버전 */
+/* HERO - diary kitsch */
 .hero {
   position: relative;
-  min-height: 680px;
+  min-height: 760px;
+  padding: 22px 18px 0;
   overflow: hidden;
-  background: #ddd;
-  isolation: isolate;
+  background: transparent;
 }
 
 .hero-image {
   display: block;
   width: 100%;
-  height: 680px;
+  height: 720px;
   object-fit: cover;
+  border-radius: 34px;
+  filter: saturate(0.92) contrast(0.96) brightness(0.96);
 }
 
+.hero::before,
 .hero::after {
+  content: none;
+}
+
+.hero-overlay.hero-diary {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  content: "";
-  background:
-    linear-gradient(to bottom, rgba(20, 18, 14, 0.34), rgba(20, 18, 14, 0.04) 42%, rgba(20, 18, 14, 0.22)),
-    radial-gradient(circle at 50% 12%, rgba(255, 248, 234, 0.18), transparent 36%);
+  inset: 22px 18px 0;
+  z-index: 2;
+  color: var(--cream);
   pointer-events: none;
 }
 
-/* 바깥 라인도 지저분해 보여서 제거 */
-.hero::before {
-  content: none !important;
-  display: none !important;
-}
-
-.hero-overlay {
+.hero-main-copy {
   position: absolute;
-  z-index: 2;
-  inset: 0;
-  color: var(--cream);
-}
-
-/* 상단 작은 문구 */
-.hero-topline {
-  position: absolute;
-  top: 34px;
-  left: 24px;
-  right: 24px;
-  text-align: center;
-}
-
-.hero-kitsch-label {
-  display: block;
-  margin: 0 auto 4px;
-  padding: 0;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  color: var(--cream);
-  font-family: var(--kitsch);
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.35;
-  letter-spacing: -0.035em;
-  text-shadow: 0 2px 10px rgba(35, 29, 22, 0.32);
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  transform: none !important;
-}
-
-.hero-since {
-  width: auto;
-  margin: 0;
-  padding: 0;
-  border-radius: 0 !important;
-  background: transparent !important;
-  color: rgba(255, 248, 234, 0.92);
-  font-family: var(--kitsch);
-  font-size: 10px;
-  font-weight: 300;
-  line-height: 1.35;
-  letter-spacing: -0.035em;
-  text-shadow: 0 2px 10px rgba(35, 29, 22, 0.32);
-  box-shadow: none !important;
-  transform: none !important;
-}
-
-/* 메인 타이틀: 네모박스/테이프 없이 사진 위에 바로 배치 */
-.hero-title-card {
-  position: absolute !important;
-  top: 86px !important;
-  left: 18px !important;
-  right: 18px !important;
-  bottom: auto !important;
-  display: grid !important;
-  justify-items: center !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  text-align: center !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-
-.hero-title-card::before,
-.hero-title-card::after {
-  content: none !important;
-  display: none !important;
-}
-
-.hero-name {
   margin: 0;
   color: var(--cream);
   font-family: var(--kitsch);
-  font-size: clamp(50px, 16vw, 76px);
   font-weight: 300;
-  line-height: 0.98;
-  letter-spacing: -0.09em;
-  text-shadow:
-    0 3px 16px rgba(38, 31, 24, 0.36),
-    0 1px 0 rgba(255, 255, 255, 0.18);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
-.hero-amp {
+.hero-main-top {
+  top: 90px;
+  left: 44px;
+  font-size: clamp(76px, 17vw, 108px);
+}
+
+.hero-main-bottom {
+  left: 215px;
+  bottom: 80px;
+  font-size: clamp(62px, 13.5vw, 84px);
+  text-align: left;
+}
+
+.hero-side-copy {
+  position: absolute;
+  top: 66px;
+  right: 36px;
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.42;
+  text-align: right;
+  letter-spacing: 0.01em;
+}
+
+.hero-date-vertical {
+  position: absolute;
+  left: 26px;
+  bottom: 88px;
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.heart-sticker {
+  position: absolute;
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  margin: 3px 0 6px;
-  border-radius: 50%;
-  background: var(--coral);
-  color: var(--cream);
-  font-family: var(--serif);
-  font-size: 24px;
-  font-style: italic;
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--coral);
+  border-radius: 8px;
+  font-size: 26px;
   line-height: 1;
-  box-shadow: 0 8px 18px rgba(255, 127, 102, 0.28);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+}
+
+.heart-sticker::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(12% 16%, 76% 0, 100% 72%, 26% 100%, 0 42%);
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.heart-1 {
+  top: 88px;
+  left: 208px;
+  transform: rotate(-7deg);
+}
+
+.heart-2 {
+  top: 318px;
+  left: 38px;
   transform: rotate(-8deg);
 }
 
-/* 첫 번째 예시처럼 불필요한 스티커/날짜칩 제거 */
-.hero-date-chip,
-.hero-sticker,
-.sticker-one,
-.sticker-two,
-.sticker-three,
-.sticker-four {
-  display: none !important;
+.heart-3 {
+  top: 346px;
+  right: 58px;
+  transform: rotate(-10deg);
 }
 
-/* SECTION COMMON */
+.heart-4 {
+  bottom: 176px;
+  left: 108px;
+  transform: rotate(4deg);
+}
+
+.heart-5 {
+  right: 52px;
+  bottom: 66px;
+  transform: rotate(8deg);
+}
+
+/* COMMON */
 .section {
   padding: 74px 30px;
   text-align: center;
@@ -231,15 +219,13 @@ button {
 .script-title {
   margin: 0 0 18px;
   color: var(--accent-dark);
-  font-family: var(--kitsch);
+  font-family: var(--serif);
   font-size: 24px;
-  font-weight: 300;
-  letter-spacing: -0.04em;
+  font-style: italic;
 }
 
 .names-ko {
   margin: 0 0 36px;
-  color: var(--deep-brown);
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -262,22 +248,17 @@ button {
 .eyebrow {
   margin: 0 0 8px;
   color: var(--accent-dark);
-  font-family: var(--kitsch);
+  font-family: var(--serif);
   font-size: 17px;
-  font-weight: 300;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.16em;
 }
 
 h2 {
   margin: 0 0 28px;
-  color: var(--deep-brown);
-  font-family: var(--kitsch);
-  font-size: 22px;
-  font-weight: 300;
-  letter-spacing: -0.05em;
+  font-size: 20px;
+  font-weight: 500;
 }
 
-/* GALLERY */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -307,7 +288,6 @@ h2 {
   transform: scale(1.04);
 }
 
-/* ACCOUNT */
 .account-section {
   background: #fbfaf3;
 }
@@ -319,10 +299,10 @@ h2 {
 }
 
 .account-card {
-  overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 8px;
   background: #fff;
+  overflow: hidden;
 }
 
 .account-toggle {
@@ -379,7 +359,6 @@ dd {
   text-align: right;
 }
 
-/* 버튼 그린 컬러 */
 .copy-button,
 .primary-button,
 .more-button {
@@ -397,7 +376,6 @@ dd {
   font-size: 14px;
 }
 
-/* GUESTBOOK */
 .guestbook-form {
   display: grid;
   gap: 13px;
@@ -414,12 +392,12 @@ dd {
 .guestbook-form input,
 .guestbook-form textarea {
   width: 100%;
-  padding: 12px 13px;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  outline: none;
+  border-radius: 8px;
   background: #fff;
   color: var(--text);
+  padding: 12px 13px;
+  outline: none;
 }
 
 .guestbook-form input:focus,
@@ -447,10 +425,10 @@ dd {
 }
 
 .message-card {
-  padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 8px;
   background: #fff;
+  padding: 16px;
 }
 
 .message-meta {
@@ -486,7 +464,6 @@ dd {
   color: var(--accent-dark);
 }
 
-/* LIGHTBOX */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -518,13 +495,13 @@ dd {
   justify-content: center;
   width: 42px;
   height: 42px;
-  padding: 0 0 3px;
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   color: #222;
   font-size: 28px;
   line-height: 1;
+  padding: 0 0 3px;
 }
 
 .lightbox-nav {
@@ -536,13 +513,13 @@ dd {
   justify-content: center;
   width: 46px;
   height: 46px;
-  padding: 0 0 4px;
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   color: #222;
   font-size: 36px;
   line-height: 1;
+  padding: 0 0 4px;
   transform: translateY(-50%);
 }
 
@@ -558,12 +535,12 @@ dd {
   display: none;
 }
 
-/* TOAST */
 .toast {
   position: fixed;
   left: 50%;
   bottom: 24px;
   z-index: 60;
+  transform: translate(-50%, 20px);
   min-width: 160px;
   padding: 12px 16px;
   border-radius: 999px;
@@ -572,7 +549,6 @@ dd {
   text-align: center;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, 20px);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -586,44 +562,76 @@ dd {
     box-shadow: none;
   }
 
-  .hero,
+  .hero {
+    min-height: 710px;
+    padding: 20px 16px 0;
+  }
+
   .hero-image {
-    height: 100svh;
-    min-height: 620px;
+    height: 680px;
+    border-radius: 32px;
+  }
+
+  .hero-overlay.hero-diary {
+    inset: 20px 16px 0;
   }
 
   .section {
     padding: 66px 24px;
   }
 
-  .hero-topline {
-    top: 32px;
+  .hero-main-top {
+    top: 96px;
+    left: 44px;
+    font-size: clamp(68px, 18vw, 88px);
+  }
+
+  .hero-main-bottom {
+    left: 204px;
+    bottom: 90px;
+    font-size: clamp(56px, 14vw, 74px);
+  }
+
+  .hero-side-copy {
+    top: 62px;
+    right: 34px;
+    font-size: 17px;
+  }
+
+  .hero-date-vertical {
     left: 22px;
-    right: 22px;
+    bottom: 90px;
+    font-size: 16px;
   }
 
-  .hero-kitsch-label {
-    font-size: 12px;
-  }
-
-  .hero-since {
-    font-size: 10px;
-  }
-
-  .hero-title-card {
-    top: 78px !important;
-    left: 14px !important;
-    right: 14px !important;
-    bottom: auto !important;
-  }
-
-  .hero-name {
-    font-size: clamp(48px, 17vw, 64px);
-  }
-
-  .hero-amp {
-    width: 42px;
-    height: 42px;
+  .heart-sticker {
+    width: 48px;
+    height: 48px;
     font-size: 23px;
+  }
+
+  .heart-1 {
+    top: 90px;
+    left: 206px;
+  }
+
+  .heart-2 {
+    top: 322px;
+    left: 36px;
+  }
+
+  .heart-3 {
+    top: 348px;
+    right: 52px;
+  }
+
+  .heart-4 {
+    bottom: 182px;
+    left: 110px;
+  }
+
+  .heart-5 {
+    right: 48px;
+    bottom: 72px;
   }
 }
