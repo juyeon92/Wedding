@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background: var(--page-bg);
+}
+
 body {
   margin: 0;
   background: var(--page-bg);
@@ -58,7 +62,7 @@ button {
   height: 44px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.72);
   color: var(--accent-dark);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(8px);
@@ -69,6 +73,7 @@ button {
   transform: translateY(-1px);
 }
 
+/* HERO */
 .hero {
   position: relative;
   min-height: 680px;
@@ -90,9 +95,9 @@ button {
   z-index: 0;
   content: "";
   background:
-    radial-gradient(circle at 18% 18%, rgba(255, 248, 234, 0.34), transparent 28%),
-    radial-gradient(circle at 82% 72%, rgba(255, 127, 102, 0.2), transparent 30%),
-    linear-gradient(to bottom, rgba(28, 24, 18, 0.24), rgba(28, 24, 18, 0.04) 42%, rgba(28, 24, 18, 0.38));
+    radial-gradient(circle at 18% 18%, rgba(255, 248, 234, 0.24), transparent 28%),
+    radial-gradient(circle at 82% 72%, rgba(255, 127, 102, 0.15), transparent 30%),
+    linear-gradient(to bottom, rgba(28, 24, 18, 0.18), rgba(28, 24, 18, 0.02) 44%, rgba(28, 24, 18, 0.34));
   pointer-events: none;
 }
 
@@ -131,7 +136,7 @@ button {
   padding: 8px 13px 7px;
   border: 1.5px solid rgba(255, 248, 234, 0.78);
   border-radius: 999px;
-  background: rgba(255, 248, 234, 0.28);
+  background: rgba(60, 53, 45, 0.42);
   color: var(--cream);
   font-family: var(--kitsch);
   font-size: 13px;
@@ -148,7 +153,7 @@ button {
   margin: 0 0 0 5px;
   padding: 7px 10px 6px;
   border-radius: 6px;
-  background: rgba(183, 216, 194, 0.82);
+  background: rgba(183, 216, 194, 0.84);
   color: var(--deep-brown);
   font-family: var(--kitsch);
   font-size: 11px;
@@ -159,6 +164,7 @@ button {
   transform: rotate(1.4deg);
 }
 
+/* 타이틀 뒤 네모박스/테이프 제거 최종 버전 */
 .hero-title-card {
   position: absolute;
   left: 32px;
@@ -175,28 +181,34 @@ button {
   backdrop-filter: none;
 }
 
+.hero-title-card::before,
+.hero-title-card::after {
+  content: none;
+  display: none;
+}
+
 .hero-name {
   margin: 0;
   color: var(--cream);
   font-family: var(--kitsch);
-  font-size: clamp(42px, 12vw, 58px);
+  font-size: clamp(46px, 14vw, 68px);
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.02;
   letter-spacing: -0.08em;
-  text-shadow: 0 3px 16px rgba(38, 31, 24, 0.26);
+  text-shadow: 0 3px 16px rgba(38, 31, 24, 0.32);
 }
 
 .hero-amp {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  margin: 2px 0 5px;
+  width: 46px;
+  height: 46px;
+  margin: 3px 0 6px;
   border-radius: 50%;
   background: var(--coral);
   color: var(--cream);
   font-family: var(--serif);
-  font-size: 23px;
+  font-size: 25px;
   font-style: italic;
   line-height: 1;
   box-shadow: 0 8px 18px rgba(255, 127, 102, 0.28);
@@ -267,6 +279,7 @@ button {
   transform: rotate(-10deg);
 }
 
+/* SECTION COMMON */
 .section {
   padding: 74px 30px;
   text-align: center;
@@ -287,6 +300,7 @@ button {
 
 .names-ko {
   margin: 0 0 36px;
+  color: var(--deep-brown);
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -324,6 +338,7 @@ h2 {
   letter-spacing: -0.05em;
 }
 
+/* GALLERY */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -353,6 +368,7 @@ h2 {
   transform: scale(1.04);
 }
 
+/* ACCOUNT */
 .account-section {
   background: #fbfaf3;
 }
@@ -364,10 +380,10 @@ h2 {
 }
 
 .account-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
   overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
 }
 
 .account-toggle {
@@ -441,6 +457,7 @@ dd {
   font-size: 14px;
 }
 
+/* GUESTBOOK */
 .guestbook-form {
   display: grid;
   gap: 13px;
@@ -457,18 +474,18 @@ dd {
 .guestbook-form input,
 .guestbook-form textarea {
   width: 100%;
+  padding: 12px 13px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
+  outline: none;
   background: #fff;
   color: var(--text);
-  padding: 12px 13px;
-  outline: none;
 }
 
 .guestbook-form input:focus,
 .guestbook-form textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(154, 170, 111, 0.15);
+  box-shadow: 0 0 0 3px rgba(125, 139, 86, 0.15);
 }
 
 .form-error {
@@ -490,10 +507,10 @@ dd {
 }
 
 .message-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
   padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
 }
 
 .message-meta {
@@ -529,6 +546,7 @@ dd {
   color: var(--accent-dark);
 }
 
+/* LIGHTBOX */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -560,13 +578,13 @@ dd {
   justify-content: center;
   width: 42px;
   height: 42px;
+  padding: 0 0 3px;
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   color: #222;
   font-size: 28px;
   line-height: 1;
-  padding: 0 0 3px;
 }
 
 .lightbox-nav {
@@ -578,13 +596,13 @@ dd {
   justify-content: center;
   width: 46px;
   height: 46px;
+  padding: 0 0 4px;
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   color: #222;
   font-size: 36px;
   line-height: 1;
-  padding: 0 0 4px;
   transform: translateY(-50%);
 }
 
@@ -600,12 +618,12 @@ dd {
   display: none;
 }
 
+/* TOAST */
 .toast {
   position: fixed;
   left: 50%;
   bottom: 24px;
   z-index: 60;
-  transform: translate(-50%, 20px);
   min-width: 160px;
   padding: 12px 16px;
   border-radius: 999px;
@@ -614,6 +632,7 @@ dd {
   text-align: center;
   opacity: 0;
   pointer-events: none;
+  transform: translate(-50%, 20px);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -656,17 +675,32 @@ dd {
   }
 
   .hero-title-card {
-  position: absolute;
-  left: 32px;
-  right: 32px;
-  bottom: 82px;
-  display: grid;
-  justify-items: center;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  text-align: center;
-  box-shadow: none;
-  backdrop-filter: none;
+    left: 24px;
+    right: 24px;
+    bottom: 78px;
+  }
+
+  .hero-name {
+    font-size: clamp(42px, 15vw, 58px);
+  }
+
+  .hero-amp {
+    width: 42px;
+    height: 42px;
+    font-size: 23px;
+  }
+
+  .hero-date-chip {
+    right: 24px;
+    bottom: 34px;
+  }
+
+  .sticker-one {
+    right: 28px;
+  }
+
+  .sticker-two {
+    left: 20px;
+    bottom: 250px;
+  }
 }
