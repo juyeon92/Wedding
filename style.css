@@ -1,7 +1,7 @@
 :root {
   --page-bg: #f1f0ec;
   --beige: #f6f1ea;
-  --warm-white: #fcfaf6;
+  --warm-white: #f6f1ea;
   --panel-bg: #ffffff;
   --accent: #9f9689;
   --accent-dark: #7f7668;
@@ -20,7 +20,7 @@
 html,
 body {
   margin: 0;
-  background: var(--page-bg);
+  background: var(--beige);
   color: var(--text);
   font-family: var(--kr);
   line-height: 1.7;
@@ -72,7 +72,7 @@ button {
 }
 
 .hero-card {
-  padding: 28px 18px 18px;
+  padding: 28px 18px 48px;
   background: transparent;
   text-align: center;
 }
@@ -104,12 +104,12 @@ button {
 .hero-english-title {
   position: relative;
   z-index: 1;
-  margin: -18px 0 0;
+  margin: -8px 0 0;
   color: #9e977f;
   font-family: var(--script);
   font-size: 56px;
   font-weight: 400;
-  line-height: 0.95;
+  line-height: 0.82;
   text-align: center;
 }
 
@@ -120,7 +120,7 @@ button {
 }
 
 .story-section {
-  background: var(--warm-white);
+  background: var(--beige);
 }
 
 .gallery-section {
@@ -128,7 +128,7 @@ button {
 }
 
 .account-section {
-  background: var(--warm-white);
+  background: var(--beige);
 }
 
 .guestbook-section {
@@ -142,6 +142,7 @@ button {
   font-size: 28px;
   font-weight: 400;
   line-height: 1.1;
+  text-transform: none;
 }
 
 .names-ko,
@@ -480,7 +481,7 @@ dd {
   }
 
   .hero-card {
-    padding: 24px 14px 14px;
+    padding: 24px 14px 44px;
   }
 
   .hero-korean-names {
@@ -498,8 +499,9 @@ dd {
   }
 
   .hero-english-title {
-    margin-top: -16px;
-    font-size: 52px;
+    margin-top: -6px;
+    font-size: 50px;
+    line-height: 0.82;
   }
 
   .section {
