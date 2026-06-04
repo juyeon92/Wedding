@@ -5,28 +5,33 @@
   // 현재는 images/optimized 안의 웹용 축소 이미지를 사용합니다.
   // images/gallery 폴더를 직접 사용할 경우 getImagePath 함수의 경로도 함께 수정하세요.
   const galleryImages = [
+    "0044.jpg",
+    "0078.jpg",
     "0113 마트중.jpg",
     "0136 마트우.jpg",
     "0170 마트좌.jpg",
-    "0181 우.jpg",
     "0197.jpg",
     "0203 마트좌.jpg",
     "0210 마트중.jpg",
     "0217 마트우.jpg",
+    "0236.jpg",
     "0299.jpg",
     "0310 우.jpg",
-    "0435 컨페티합성.jpg",
+    "0374.jpg",
     "0460.jpg",
+    "0461.jpg",
     "0496.jpg",
     "0510 우.jpg",
     "0527.jpg",
     "0652.jpg",
     "0676 우.jpg",
+    "0709.jpg",
     "0724 마트메인좌.jpg",
     "0734 마트우-상.jpg",
     "0745 마트우-하.jpg",
     "0757.jpg",
     "0764 우.jpg",
+    "0781.jpg",
   ];
 
   const STORAGE_KEY = "yoongyu-juyeon-guestbook";
