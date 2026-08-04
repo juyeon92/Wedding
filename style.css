@@ -125,11 +125,11 @@ button {
 }
 
 .story-section {
-  background: var(--beige);
+  background: var(--warm-white);
 }
 
 .gallery-section {
-  background: var(--warm-white);
+  background: var(--beige);
 }
 
 .account-section {
