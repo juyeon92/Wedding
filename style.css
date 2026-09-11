@@ -114,6 +114,16 @@ button {
   text-align: center;
 }
 
+.hero-date {
+  margin: 18px 0 0;
+  color: var(--accent-dark);
+  font-family: var(--kr);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
 .section {
   margin: 0;
   padding: 44px 26px;
