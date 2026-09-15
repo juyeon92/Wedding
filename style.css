@@ -77,15 +77,6 @@ button {
   text-align: center;
 }
 
-.hero-korean-names {
-  margin: 0 0 22px;
-  color: var(--accent-dark);
-  font-family: var(--kr);
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-}
-
 .hero-arch-frame {
   width: min(100%, 286px);
   margin: 0 auto;
@@ -114,7 +105,7 @@ button {
 }
 
 .hero-date {
-  margin: 18px 0 0;
+  margin: 30px 0 0;
   color: var(--accent-dark);
   font-family: var(--kr);
   font-size: 14px;
@@ -200,12 +191,10 @@ h2 {
 }
 
 .story-parents {
-  margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid rgba(231, 222, 210, 0.72);
   color: var(--subtext);
   font-family: var(--kr);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.8;
   word-break: keep-all;
@@ -213,6 +202,16 @@ h2 {
 
 .story-parents p {
   margin: 0;
+}
+
+.story-parents .parent-connector {
+  color: var(--subtext);
+  font-weight: 400;
+}
+
+.story-parents strong {
+  color: var(--accent-dark);
+  font-weight: 700;
 }
 
 .gallery-grid {
@@ -538,12 +537,6 @@ dd {
 
   .hero-card {
     padding: 24px 14px 44px;
-  }
-
-  .hero-korean-names {
-    margin-bottom: 18px;
-    font-size: 17px;
-    letter-spacing: 0.12em;
   }
 
   .hero-arch-frame {
