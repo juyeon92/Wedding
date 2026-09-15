@@ -6,6 +6,7 @@
   // images/gallery 폴더를 직접 사용할 경우 getImagePath 함수의 경로도 함께 수정하세요.
   const galleryImages = [
     "0044.jpg",
+    "top.jpg",
     "0078.jpg",
     "0113 마트중.jpg",
     "0136 마트우.jpg",
@@ -21,7 +22,6 @@
     "0460.jpg",
     "0461.jpg",
     "0496.jpg",
-    "0510 우.jpg",
     "0527.jpg",
     "0652.jpg",
     "0676 우.jpg",
