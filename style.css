@@ -140,6 +140,20 @@ button {
   background: var(--beige);
 }
 
+.closing-note {
+  background: var(--warm-white);
+}
+
+.closing-note p {
+  margin: 0;
+  color: var(--subtext);
+  font-family: var(--kr);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
 .section-label {
   margin: 0 0 14px;
   color: var(--accent);
