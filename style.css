@@ -214,6 +214,14 @@ h2 {
   word-break: keep-all;
 }
 
+.story-parents .parent-divider {
+  display: block;
+  width: 32px;
+  height: 1px;
+  margin: 0 auto 20px;
+  background: var(--line);
+}
+
 .story-parents p {
   margin: 0;
 }
