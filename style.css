@@ -223,6 +223,12 @@ h2 {
   font-weight: 400;
 }
 
+.story-parents .role-word {
+  display: inline-block;
+  width: 2em;
+  text-align: center;
+}
+
 .story-parents strong {
   color: var(--accent-dark);
   font-weight: 700;
